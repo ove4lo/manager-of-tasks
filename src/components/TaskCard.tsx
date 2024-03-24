@@ -6,7 +6,12 @@ const TaskCard: React.FC<ITask> = ({ name, description, dateofcreation, priority
             <h3>{name}</h3>
             <p>Дата создания: {dateofcreation.toDateString()}</p>
             <p>Приоритет: {priority}</p>
-            <p className="marks">Отметки: {marks}</p>
+            <p className="marks">
+                Отметки:
+                {marks.map((mark, index) => (
+                    <span key={index}>{mark}</span>
+                ))}
+            </p>
             <p className="description">Описание: {description}</p> 
         </div>
     )

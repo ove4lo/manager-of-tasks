@@ -1,12 +1,14 @@
 import React from 'react';
 import TaskCard from '../components/TaskCard'; 
 import { ITask } from '../models/models';
+import TaskFilter from '../components/TaskFilter';
+
 
 const tasks: ITask[] = [
   {
     name: 'Task 1',
-    description: 'Description for Task 1',
-    dateofcreation: new Date(),
+    description: 'Description for Task 1 fkkggggggggggggggggggggggggggggggggggg gggggggggggggggggggggggggggggg gggggggggggggggggggggggggggggg ggggggggggggggg gggggggggggggggggggggggggg ggggggggggggg ggggggggggg gggggggggggggggggggg gggggggggggggggggggggggggggggggggg gggggggggggggggggggggggggggggggggggggg ggggggggggggggggggggggggggggggggggggggggggggggg gggggggggggg gggggggggggggggggggggggggggggggg ggggggggggggggggggggggggggggggggggggg',
+    dateofcreation: new Date(),  
     priority: 'high',
     marks: ['important', 'urgent']
   },
@@ -15,7 +17,7 @@ const tasks: ITask[] = [
     description: 'Description for Task 2',
     dateofcreation: new Date(),
     priority: 'medium',
-    marks: ['work']
+    marks: []
   },
   {
     name: 'Task 3',
@@ -27,14 +29,21 @@ const tasks: ITask[] = [
 ];
 
 const MainPage: React.FC = () => {
-  return (
-    <div className="container">
-      <h1 className="title">Список задач</h1>
-        {tasks.map((task, index) => (
-          <TaskCard key={index} {...task} />
-        ))}
-    </div>
-  );
+    return (
+        <div className="container">
+          <h1 className="title">Список задач</h1>
+          <div className="main">
+            <div className="task-filter">
+              <TaskFilter />
+            </div>
+            <div className="task-list">
+              {tasks.map((task, index) => (
+                <TaskCard key={index} {...task} />
+              ))}
+            </div>
+          </div>
+        </div>
+      );
 };
 
 export default MainPage;

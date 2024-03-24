@@ -89,6 +89,27 @@ legend {
 }
 
 
+/*подключение шрифтов*/  
+@font-face {
+  font-family: hl;
+  src: url('./fonts/HeroLight.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: hb;
+  src: url('./fonts/HeroBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*основа*/
+body {
+  font-family: hl;
+  background-color: #F6F6F6;
+  color: #0F1F1C;
+}
 
 /*основные переменные*/
 :root {
@@ -99,43 +120,106 @@ legend {
 /*основной контейнер*/
 .container {
   max-width: var(--container-width);
-  margin: 0 auto; /*по центру*/
-  padding: 0 var(--container-padding); /*отступы*/
+  margin: 0 auto; 
+  padding: 0 var(--container-padding); 
+
+}
+
+.main { 
+  display: flex;
 }
   
 /*заголовки страниц*/
 .title {
   margin-bottom: 50px;
   margin-top: 50px;
-  font-size: 35px;
+  font-size: 50px;
   font-weight: 700;
   align-items: center;
+  font-family: hb;
+  margin-left: 20px;
 }
 
+/*task*/
 .task {
-  background-color: white; /* белый фон */
-  border-radius: 8px; /* закругленные углы */
-  box-shadow: 0 2px 4px rgba(39, 245, 191, 0.8); /* тень */
-  padding: 20px; /* отступы */
+  background-color: white; 
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(39, 245, 191, 0.8); 
+  padding: 20px; 
   margin-bottom: 20px;
+  max-width: 100%;
 }
 
 .task h3 {
-  font-weight: bold; /* жирный шрифт для названия */
+  font-weight: 500px;
+  font-size: 20px;
+  font-family: hb;
 }
-
 
 .task .marks {
   white-space: nowrap; 
 }
 
+.task .marks span {
+  margin-right: 5px; 
+  margin-left: 2px;
+}
+
+.task .marks span:before {
+  content: '●'; 
+  color: rgba(255, 196, 109, 0.8); 
+  margin-right: 2px; 
+}
+
 .task .description {
-  overflow: hidden; /* скрываем часть описания, которая не помещается */
-  max-height: 40px; /* максимальная высота двух строк */
-  transition: max-height 0.3s ease; /* анимация при изменении высоты */
+  overflow: hidden; 
+  max-height: 40px; 
+  transition: max-height 0.3s ease;
 }
 
 .task:hover .description {
-  max-height: none; /* при наведении открываем полностью */
+  max-height: none; 
+}
+
+.task-sort {
+  padding: 20px;
+}
+
+.task-filter {
+  margin-top: 20px;
+  flex: 0 0 30%;
+}
+
+.task-list {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.task-checkbox {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.task-filter h3 {
+  font-family: hb;
+  font-size: 20px;
+  margin-left: 20px;
+}
+
+.radio-buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-buttons label {
+  margin-bottom: 10px;
+  position: relative; 
+}
+
+.radio-buttons input[type='radio'] {
+  accent-color: rgba(39, 245, 191, 0.8);
 }
 
