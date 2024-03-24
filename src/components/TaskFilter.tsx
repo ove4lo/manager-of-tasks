@@ -5,7 +5,7 @@ import TaskCheckBox from './TaskCheckBox';
 const priorityList = ['low', 'normal', 'high'];
 const marksList = ['research', 'design', 'development'];
 
-
+/*блок фильтрации карточек задач*/
 const TaskFilter: React.FC = () => {
   return (
     <div className="task-filter">

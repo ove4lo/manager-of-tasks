@@ -1,14 +1,18 @@
-import React from 'react';
+import { ITask } from "../models/models";
 
-const TaskEditPage: React.FC = () => {
-  return (
-    <div className="task-details-page">
-      <h1>Task Edit</h1>
-      <div className="task-list">
-    
-      </div>
-    </div>
-  );
-};
+/*деталь задачи*/
+const TaskEditPage: React.FC = () => { 
+    return (
+        <div className='container'> 
+            <h3>Название</h3>
+            <p>Дата создания: </p> 
+            <p>Приоритет: </p>
+            <p className="marks">
+                Отметки:
+            </p>
+            <p>Описание: </p> 
+        </div>
+    )
+}
 
 export default TaskEditPage;

@@ -3,7 +3,7 @@ import TaskCard from '../components/TaskCard';
 import { ITask } from '../models/models';
 import TaskFilter from '../components/TaskFilter';
 
-
+/*главная страница*/
 const tasks: ITask[] = [
   {
     name: 'Task 1',
@@ -34,6 +34,7 @@ const MainPage: React.FC = () => {
           <h1 className="title">Список задач</h1>
           <div className="main">
             <div className="task-filter">
+            <button className="btn">Добавить задачу</button>
               <TaskFilter />
             </div>
             <div className="task-list">

@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 import MainPage from './pages/MainPage';
-import TaskDetailsPage from './pages/TaskDetailsPage';
 import TaskEditPage from './pages/TaskEditPage';
+import TaskDetailsPage from './pages/TaskDetailsPage';
 
 function App() {
   return (

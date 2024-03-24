@@ -4,6 +4,7 @@ interface TaskCheckBoxProps {
   items: string[]; 
 }
 
+/*чекбокс для фильрации карточек задач*/
 const TaskCheckBox: React.FC<TaskCheckBoxProps> = ({ items }) => {
   return (
     <div className="task-checkbox">

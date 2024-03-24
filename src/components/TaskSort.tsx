@@ -1,5 +1,6 @@
 import React, { useState, ChangeEvent } from 'react';
 
+/*сортировка карточек задач*/
 const TaskSort: React.FC = () => {
   const [sortType, setSortType] = useState('Новые');
 
