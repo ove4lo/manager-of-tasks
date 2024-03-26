@@ -1,11 +1,15 @@
 import React, { useState, ChangeEvent } from 'react';
 
+interface TaskSortProps {
+  onSortChange: (sortType: string) => void;
+}
+
 /*сортировка карточек задач*/
-const TaskSort: React.FC = () => {
+const TaskSort: React.FC<TaskSortProps> = ({ onSortChange }) => {
   const [sortType, setSortType] = useState('Новые');
 
   const handleSortChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setSortType(event.target.value); 
+    onSortChange(event.target.value); 
   };
 
   return (

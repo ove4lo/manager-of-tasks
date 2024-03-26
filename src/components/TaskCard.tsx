@@ -1,11 +1,13 @@
 import { ITask } from "../models/models";
 
 /*карточка задачи*/
-const TaskCard: React.FC<ITask> = ({ name, description, dateofcreation, priority, marks}) => { 
+const TaskCard: React.FC<ITask> = ({ name, description, dateofcreation, priority, marks }) => { 
+
+    const formattedDate = new Date(dateofcreation).toLocaleDateString();
     return (
         <div className='task'> 
             <h3>{name}</h3>
-            <p>Дата создания: {dateofcreation.toDateString()}</p> 
+            <p>Дата создания: {formattedDate}</p> 
             <p>Приоритет: {priority}</p>
             <p className="marks">
                 Отметки:
