@@ -9,9 +9,11 @@ const TaskSort: React.FC<TaskSortProps> = ({ onSortChange }) => {
   const [sortType, setSortType] = useState('Новые');
 
   const handleSortChange = (event: ChangeEvent<HTMLInputElement>) => {
-    onSortChange(event.target.value); 
+    const newSortType = event.target.value;
+    setSortType(newSortType);
+    onSortChange(newSortType); 
   };
-
+  
   return (
     <div className="task-sort">
       <div className="radio-buttons">

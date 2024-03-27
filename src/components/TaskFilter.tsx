@@ -5,16 +5,20 @@ import TaskCheckBox from './TaskCheckBox';
 const priorityList = ['low', 'normal', 'high'];
 const marksList = ['research', 'design', 'development'];
 
+interface TaskFilterProps {
+  onSortChange: (sortType: string) => void;
+}
+
 /*блок фильтрации карточек задач*/
-const TaskFilter: React.FC = () => {
+const TaskFilter: React.FC<TaskFilterProps> = ({ onSortChange }) => {
   return (
     <div className="task-filter">
         <h3>Сортировка</h3>
-        <TaskSort />
+        <TaskSort onSortChange={onSortChange} /> 
         <h3>Приоритет</h3>
-        <TaskCheckBox items={priorityList} />
+        {/* <TaskCheckBox items={priorityList} />
         <h3>Отметки</h3>
-        <TaskCheckBox items={marksList} />
+        <TaskCheckBox items={marksList} /> */}
     </div>
   );
 };

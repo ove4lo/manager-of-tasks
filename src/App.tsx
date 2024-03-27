@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainPage from './pages/MainPage';
 import TaskEditPage from './pages/TaskEditPage';
 import TaskDetailsPage from './pages/TaskDetailsPage';
+import TaskCreatePage from './pages/TaskCreatePage';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <div className="container mx-auto pt-4">
         <Routes>
           <Route path={'/'} element={<MainPage />} />
+          <Route path={'/add'} element={<TaskCreatePage />} />
           <Route path={'/task/:id'} element={<TaskDetailsPage />} />
           <Route path={'/task/edit/:id'} element={<TaskEditPage />} /> 
         </Routes>
