@@ -5,6 +5,7 @@ import { ITask } from "../models/models";
 import GoButton from '../components/GoButton';
 import DeleteButton from '../components/DeleteButton';
 
+/*страница просмотра задачи*/
 const TaskDetailsPage: React.FC = () => {
   const [task, setTask] = useState<ITask | null>(null);
   const { id } = useParams<{ id: string }>();
@@ -12,7 +13,7 @@ const TaskDetailsPage: React.FC = () => {
   useEffect(() => {
     const fetchTask = async () => {
       try {
-        const response = await axios.get<ITask>(`http://localhost:3001/task/${id}`);
+        const response = await axios.get<ITask>(`http://localhost:3001/task/${id}`); //получение деталей задачи по id
         setTask(response.data);
       } catch (error) {
         console.error('Ошибка при загрузке задачи:', error);

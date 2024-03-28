@@ -1,3 +1,4 @@
+/*интерфейс задачи*/
 export interface ITask {
     id?: number;
     name: string;

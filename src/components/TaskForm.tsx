@@ -3,11 +3,8 @@ import axios from 'axios';
 import { ITask } from '../models/models';
 import { useNavigate } from "react-router-dom";
 
-export interface TaskFormProps {
-  onTaskAdded: (newTask: ITask) => void;
-}
-
-const TaskForm: React.FC<TaskFormProps> = ({ onTaskAdded }) => {
+//форма добавления задачи
+const TaskForm: React.FC = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
   const [dateofcreation, setDateofcreation] = useState('');
@@ -15,17 +12,14 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskAdded }) => {
   const [marks, setMarks] = useState<string[]>([]);
   const marksList = ['research', 'design', 'development'];
 
-
-  // Получаем функцию для навигации
   const navigate = useNavigate();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     try {
-      // Преобразуем строку в объект Date
-      const date = new Date(dateofcreation);
+      const date = new Date(dateofcreation); //изменяем тип даты
 
-      // Создаем объект нового задания
+      //создание нового задания
       const newTask: ITask = {
         name,
         description,
@@ -33,22 +27,15 @@ const TaskForm: React.FC<TaskFormProps> = ({ onTaskAdded }) => {
         priority,
         marks
       };
-      console.log(newTask);
 
-      // Отправляем данные формы на сервер
-      await axios.put("http://localhost:3001/add", newTask);
+      await axios.put("http://localhost:3001/add", newTask); //добавление новой задачи
 
-      // Показываем уведомление об успешном добавлении задания
-      alert('Задание успешно добавлено');
+      alert('Задание успешно добавлено'); //сообщение об успешном добавлении
 
-      // Переадресация на главную страницу
-      navigate("/");
+      navigate("/"); //переходим на главную страницу
 
-      // Вызываем колбэк для обновления списка заданий
-      onTaskAdded(newTask);
     } catch (error) {
-      // Показываем уведомление об ошибке
-      alert('Произошла ошибка при добавлении задания');
+      alert('Произошла ошибка при добавлении задания'); //сообщение об неудачном добавлении
     }
   };
 

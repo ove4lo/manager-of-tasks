@@ -230,6 +230,7 @@ body {
 .radio-buttons label {
 
   position: relative; 
+  margin-bottom: 10px;
 }
 
 .radio-buttons input[type='radio'] {

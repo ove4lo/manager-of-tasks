@@ -5,6 +5,7 @@ interface TaskSortProps {
 }
 
 /*сортировка карточек задач*/
+/*следим за изменениями*/
 const TaskSort: React.FC<TaskSortProps> = ({ onSortChange }) => {
   const [sortType, setSortType] = useState('Новые');
 

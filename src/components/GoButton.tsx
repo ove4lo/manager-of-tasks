@@ -5,11 +5,13 @@ interface GoButtonProps {
   nav: string;
 }
 
-const GoButton: React.FC<GoButtonProps> = ({ text, nav }) => {
+/*кнопка для перехода куда либо*/
+/*передаем текст в кноаке и ссылку для перехода*/
+const GoButton: React.FC<GoButtonProps> = ({ text, nav }) => { 
   const navigate = useNavigate();
 
   const goNew = () => {
-    navigate(nav); 
+    navigate(nav);  //переходим по ссылке
   };
 
   return (

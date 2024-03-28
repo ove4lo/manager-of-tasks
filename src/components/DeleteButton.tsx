@@ -5,17 +5,17 @@ interface DeleteButtonProps {
     task_id: string;
 }
 
+/*кнопка удаления задачи*/
 const DeleteButton: React.FC<DeleteButtonProps> = ({ task_id }) => {
   const navigate = useNavigate();
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3001/task/delete/${task_id}`);
-      alert("Задание успешно удалено");
-      navigate("/");
+      await axios.delete(`http://localhost:3001/task/delete/${task_id}`); //запрос на удаление задачи по его id
+      alert("Задание успешно удалено"); //сообщение об удалении
+      navigate("/"); //переходим на главную страницу
     } catch (error) {
-      console.error("Ошибка при удалении задания:", error);
-      alert("Ошибка при удалении задания");
+      alert("Ошибка при удалении задания"); //сообщение об ошибке удалении
     }
   };
 
