@@ -271,7 +271,7 @@ body {
   align-items: right;
 }
 
-
+/*форма*/
 .form {
   
   font-famile: hb;
@@ -309,16 +309,14 @@ body {
   border: 1px solid rgba(255, 196, 109, 0.8); 
   border-radius: 5px;
   box-sizing: border-box;
-  margin-right: 10px; /* Отступ справа */
+  margin-right: 10px; 
 }
 
 /*MEDIA*/
-
 @media (max-width: 760px) {
   .task {
     max-width: 90%;
   }
-
 }
 
 @media (max-width: 678px) {
